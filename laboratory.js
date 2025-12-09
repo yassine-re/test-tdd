@@ -19,6 +19,9 @@ class Laboratory {
         return 0;
     }
     add(substance, quantity) {
+        if (substance == null) {
+            throw new Error('Une substance est requise');
+        }
         if (!this.substancesList.includes(substance)) {
             throw new Error('Substance inconnue');
         }
