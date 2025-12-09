@@ -19,7 +19,9 @@ class Laboratory {
         return 0;
     }
     add(substance) {
-        return -1;
+        if (!this.substancesList.includes(substance)) {
+            throw new Error('Substance inconnue');
+        }
     }
 }
 
