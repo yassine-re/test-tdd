@@ -29,5 +29,9 @@ describe('Laboratory', () => {
             const lab = new Laboratory(['A', 'B']);
             expect(() => lab.add('A', -1)).toThrow('Impossible d\'ajouter une quantite negative');
         })
+        test('ajouter une substance nulle', () => {
+            const lab = new Laboratory(['A', 'B']);
+            expect(() => lab.add(null, 0)).toThrow('Une substance est requise');
+        })
     })
 });
