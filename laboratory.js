@@ -18,6 +18,9 @@ class Laboratory {
         }
         return 0;
     }
+    add(substance) {
+        return -1;
+    }
 }
 
 module.exports = Laboratory;

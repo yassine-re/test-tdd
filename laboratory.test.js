@@ -19,4 +19,11 @@ describe('Laboratory', () => {
             expect(() => new Laboratory(['A', 'B', 'A'])).toThrow('La liste des substances doit contenir des elements uniques');
         })
     })
+
+    describe('add', () => {
+        test('ajouter une substance inconnue', () => {
+            const lab = new Laboratory(['A', 'B']);
+            expect(() => lab.add('C')).toThrow('Substance inconnue');
+        })
+    })
 });
