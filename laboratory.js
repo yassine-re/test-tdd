@@ -33,6 +33,7 @@ class Laboratory {
         if (!this.substancesMap.has(substance)) {
             throw new Error('Substance inconnue');
         }
+        this.substancesMap.set(substance, this.substancesMap.get(substance) + quantity);
     }
 }
 
