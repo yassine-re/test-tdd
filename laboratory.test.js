@@ -21,17 +21,20 @@ describe('Laboratory', () => {
     })
 
     describe('add', () => {
-        test('ajouter une substance inconnue', () => {
-            const lab = new Laboratory(['A', 'B']);
-            expect(() => lab.add('C', 1)).toThrow('Substance inconnue');
-        })
-        test('ajouter une substance negative', () => {
-            const lab = new Laboratory(['A', 'B']);
-            expect(() => lab.add('A', -1)).toThrow('Impossible d\'ajouter une quantite negative');
-        })
-        test('ajouter une substance nulle', () => {
-            const lab = new Laboratory(['A', 'B']);
-            expect(() => lab.add(null, 0)).toThrow('Une substance est requise');
-        })
-    })
+        let lab;
+        beforeEach(() => {
+            lab = new Laboratory(['A', 'B']);
+        });
+        describe('cas d\'erreur', () => {
+            test('ajouter une substance inconnue', () => {
+                expect(() => lab.add('C', 1)).toThrow('Substance inconnue');
+            })
+            test('ajouter une substance negative', () => {
+                expect(() => lab.add('A', -1)).toThrow('Impossible d\'ajouter une quantite negative');
+            })
+            test('ajouter une substance nulle', () => {
+                expect(() => lab.add(null, 0)).toThrow('Une substance est requise');
+            })
+        });
+    });
 });
