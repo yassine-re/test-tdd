@@ -12,6 +12,9 @@ describe('Laboratory', () => {
             expect(test.getQuantity("B")).toBe(0);
             expect(() => test.getQuantity("C")).toThrow('Substance inconnue');
         })
+        test('creer une instance de Laboratory avec une liste nulle', () => {
+            expect(() => new Laboratory(null)).toThrow('La liste des substances doit etre une liste non vide');
+        })
 
     })
 });
