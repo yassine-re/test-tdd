@@ -5,5 +5,13 @@ describe('Laboratory', () => {
         test('creer une instance de Laboratory avec une liste vide', () => {
             expect(() => new Laboratory([])).toThrow('La liste des substances doit etre une liste non vide');
         })
+
+        test('creer une instance de Laboratory avec une liste correcte', () => {
+            const test = new Laboratory(['A', 'B']);
+            expect(test.getQuantity("A")).toBe(0);
+            expect(test.getQuantity("B")).toBe(0);
+            expect(() => test.getQuantity("C")).toThrow('Substance inconnue');
+        })
+
     })
 });

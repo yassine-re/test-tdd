@@ -6,6 +6,10 @@ class Laboratory {
         
         this.substances = substances;
     }
+
+    getQuantity(substance) {
+        return -1.0;
+    }
 }
 
 module.exports = Laboratory;
