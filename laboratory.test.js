@@ -35,6 +35,9 @@ describe('Laboratory', () => {
             test('ajouter une substance nulle', () => {
                 expect(() => lab.add(null, 0)).toThrow('Une substance est requise');
             })
+            test('ajouter une substance sans quantite', () => {
+                expect(() => lab.add('A')).toThrow('Impossible d\'ajouter une substance sans quantite');
+            })
         });
     });
 });
