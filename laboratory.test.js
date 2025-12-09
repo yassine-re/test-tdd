@@ -39,5 +39,13 @@ describe('Laboratory', () => {
                 expect(() => lab.add('A')).toThrow('Impossible d\'ajouter une substance sans quantite');
             })
         });
+        describe('cas valide', () => {
+            test('ajouter une quantite valide a une substance connue', () => {
+                lab.add('A', 5);
+                expect(lab.getQuantity('A')).toBe(5);
+                lab.add('A', 3);
+                expect(lab.getQuantity('A')).toBe(8);
+            });
+        });
     });
 });
