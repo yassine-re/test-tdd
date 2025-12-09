@@ -23,7 +23,11 @@ describe('Laboratory', () => {
     describe('add', () => {
         test('ajouter une substance inconnue', () => {
             const lab = new Laboratory(['A', 'B']);
-            expect(() => lab.add('C')).toThrow('Substance inconnue');
+            expect(() => lab.add('C', 1)).toThrow('Substance inconnue');
+        })
+        test('ajouter une substance negative', () => {
+            const lab = new Laboratory(['A', 'B']);
+            expect(() => lab.add('A', -1)).toThrow('Impossible d\'ajouter une quantite negative');
         })
     })
 });
