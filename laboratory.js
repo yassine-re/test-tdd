@@ -22,6 +22,9 @@ class Laboratory {
         if (!this.substancesList.includes(substance)) {
             throw new Error('Substance inconnue');
         }
+        if (quantity < 0) {
+            throw new Error('Impossible d\'ajouter une quantite negative');
+        }
     }
 }
 
