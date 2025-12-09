@@ -15,6 +15,8 @@ describe('Laboratory', () => {
         test('creer une instance de Laboratory avec une liste nulle', () => {
             expect(() => new Laboratory(null)).toThrow('La liste des substances doit etre une liste non vide');
         })
-
+        test('creer une instance de Laboratory avec des elements dupliques', () => {
+            expect(() => new Laboratory(['A', 'B', 'A'])).toThrow('La liste des substances doit contenir des elements uniques');
+        })
     })
 });
